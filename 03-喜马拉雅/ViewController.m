@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
-
+#define  padding 50.f
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIButton *lastBtn;
 
 @end
 
@@ -16,7 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    //设置contentsize
+    CGFloat height  = CGRectGetMaxY(self.lastBtn.frame) + padding;
+  
+    self.scrollView.contentSize = CGSizeMake(0, height);
+    
 }
 
 - (void)didReceiveMemoryWarning {
